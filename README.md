@@ -2,6 +2,14 @@
 
 Twitterでバルスといっている人にメンションを送るといううざい感じのアプリケーションです。
 
+Execute
+-------
+
+```sh
+bundle install
+bundle exec bin/observe
+```
+
 License
 -------
 	(The IHNDIYL)
