@@ -2,6 +2,17 @@
 
 Twitterでバルスといっている人にメンションを送るといううざい感じのアプリケーションです。
 
+Preparation
+-----------
+
+Make .env from .env.example and edit .env for your Twitter application
+
+```
+cp .env.example .env
+edit .env
+```
+
+
 Execute
 -------
 
