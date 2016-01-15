@@ -54,20 +54,19 @@ class Util
     if text and user
       s = text.gsub(/([[:ascii:]]|[[:punct:]])/,'')
       puts s
-      if text !~ /^RT / and text !~ /(@|at)/ and text !~ /http/ and text =~ /バルス/
+      if text !~ /^RT / and text !~ /@/ and text !~ /http/ and text =~ /バルス/
         if bals_density_high?(text)
           puts user.screen_name
           puts text
           @client.update("at #{status.user.screen_name} " + random_message, in_reply_to_status_id: status.id)
           @client.favorite(status.id)
-          #binding.pry
         end
       end
     end
   end
 
   def random_message
-    array = ['ナイスバルス', 'これはいいバルス', 'いいバルスでしたよ〜']
+    array = ['ナイスバルス', 'これはいいバルス', 'いいバルスでしたよ〜', 'ラピュタ愛のあふれるバルスでしたね', '素晴らしいバルス']
     array.sample + '!' * rand(1..10)
   end
 
