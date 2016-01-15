@@ -1,6 +1,7 @@
 require 'dotenv'
 require 'twitter'
 require 'user_stream'
+require 'color_echo/get'
 
 class Util
   def initialize
@@ -56,8 +57,7 @@ class Util
       puts s
       if text !~ /^RT / and text !~ /@/ and text !~ /http/ and text =~ /バルス/
         if bals_density_high?(text)
-          puts user.screen_name
-          puts text
+          puts CE.fg(:green).get("@#{user.screen_name}: #{text}")
           @client.update("at #{status.user.screen_name} " + random_message, in_reply_to_status_id: status.id)
           @client.favorite(status.id)
         end
