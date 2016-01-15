@@ -58,7 +58,7 @@ class Util
       if text !~ /^RT / and text !~ /@/ and text !~ /http/ and text =~ /バルス/
         if bals_density_high?(text)
           puts CE.fg(:green).get("@#{user.screen_name}: #{text}")
-          @client.update("at #{status.user.screen_name} " + random_message, in_reply_to_status_id: status.id)
+          @client.update("@#{status.user.screen_name} " + random_message, in_reply_to_status_id: status.id)
           @client.favorite(status.id)
         end
       end
