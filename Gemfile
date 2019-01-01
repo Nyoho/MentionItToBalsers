@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 gem 'foreman'
-gem 'userstream', :git => 'git://github.com/mitukiii/userstream.git'
 gem 'twitter'
 gem 'dotenv'
 gem 'pry'
 gem 'color_echo'
+
+gem 'rspec'
